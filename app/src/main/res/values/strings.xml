@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">MyDogCollection</string>
+    <string name="app_name">My Dog Collection</string>
+    <string name="female">Hembra</string>
+    <string name="weight">Peso</string>
+    <string name="height">Altura</string>
+    <string name="group">Grupo</string>
+    <string name="male">Macho</string>
+    <string name="dog_index_format">#%d</string>
+    <string name="dog_life_expectancy_format">%s años</string>
+    <string name="unknow_host_exception_error">No hay conexión a internet</string>
+    <string name="unknow_error">Error desconocido</string>
 </resources>

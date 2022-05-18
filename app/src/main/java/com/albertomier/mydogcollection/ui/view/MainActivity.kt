@@ -1,7 +1,8 @@
-package com.albertomier.mydogcollection
+package com.albertomier.mydogcollection.ui.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.albertomier.mydogcollection.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
