@@ -9,4 +9,19 @@
     <string name="dog_life_expectancy_format">%s años</string>
     <string name="unknow_host_exception_error">No hay conexión a internet</string>
     <string name="unknow_error">Error desconocido</string>
+    <string name="email">Email</string>
+    <string name="password">Contraseña</string>
+    <string name="login">Login</string>
+    <string name="do_not_have_an_account">¿No tienes una cuenta?</string>
+    <string name="register">Registrarme</string>
+    <string name="confirm_password">Confirmar contraseña</string>
+    <string name="sign_up">Registrarme</string>
+    <string name="invalid_email">Email incorrecto</string>
+    <string name="invalid_password">Contraseña no puede estar vacia</string>
+    <string name="invalid_password_confirmation">Las contraseñas no coinciden</string>
+    <string name="error_sign_up">Error al registrarse</string>
+    <string name="error_sign_in">Error al hacer login</string>
+    <string name="user_already_exists">El usuario ya existe</string>
+    <string name="information">Información</string>
+    <string name="wrong_user_or_password">Usuario y/o contraseña incorrecto</string>
 </resources>

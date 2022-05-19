@@ -1,18 +1,33 @@
 package com.albertomier.mydogcollection.data.network
 
 import com.albertomier.mydogcollection.R
+import com.albertomier.mydogcollection.core.UNAUTHORIZED_ERROR_CODE
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import retrofit2.HttpException
 import java.net.UnknownHostException
 
 suspend fun <T> makeNetworkCall(
     call: suspend () -> T
-): DogApiResponseStatus<T> = withContext(Dispatchers.IO) {
+): ApiResponseStatus<T> = withContext(Dispatchers.IO) {
     try {
-        DogApiResponseStatus.Success(call())
+        ApiResponseStatus.Success(call())
     } catch (e: UnknownHostException) {
-        DogApiResponseStatus.Error(R.string.unknow_host_exception_error)
+        ApiResponseStatus.Error(R.string.unknow_host_exception_error)
+    } catch (e: HttpException) {
+        val errorMessage = if (e.code() == UNAUTHORIZED_ERROR_CODE) {
+            R.string.wrong_user_or_password
+        } else {
+            R.string.unknow_error
+        }
+        ApiResponseStatus.Error(errorMessage)
     } catch (e: Exception) {
-        DogApiResponseStatus.Error(R.string.unknow_error)
+        val errorMessage = when (e.message) {
+            "sign_up_error" -> R.string.error_sign_up
+            "sign_in_error" -> R.string.error_sign_in
+            "user_already_exists" -> R.string.user_already_exists
+            else -> R.string.unknow_error
+        }
+        ApiResponseStatus.Error(errorMessage)
     }
 }

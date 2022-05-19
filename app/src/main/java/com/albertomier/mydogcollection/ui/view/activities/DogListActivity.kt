@@ -1,21 +1,18 @@
-package com.albertomier.mydogcollection.ui.view
+package com.albertomier.mydogcollection.ui.view.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
+import com.albertomier.mydogcollection.core.DOG_KEY
 import com.albertomier.mydogcollection.core.GRID_SPAN_COUNT
-import com.albertomier.mydogcollection.data.network.DogApiResponseStatus
+import com.albertomier.mydogcollection.data.network.ApiResponseStatus
 import com.albertomier.mydogcollection.databinding.ActivityDogListBinding
 import com.albertomier.mydogcollection.domain.model.Dog
 import com.albertomier.mydogcollection.ui.adapter.DogAdapter
-import com.albertomier.mydogcollection.ui.view.DogDetailActivity.Companion.DOG_KEY
 import com.albertomier.mydogcollection.ui.viewmodel.DogListViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -39,12 +36,12 @@ class DogListActivity : AppCompatActivity() {
 
         dogListViewModel.status.observe(this) { status ->
             when (status) {
-                is DogApiResponseStatus.Error -> {
+                is ApiResponseStatus.Error -> {
                     binding.progress.isVisible = false
                     Toast.makeText(this, getString(status.messageId), Toast.LENGTH_SHORT).show()
                 }
-                is DogApiResponseStatus.Loading -> binding.progress.isVisible = true
-                is DogApiResponseStatus.Success -> binding.progress.isVisible = false
+                is ApiResponseStatus.Loading -> binding.progress.isVisible = true
+                is ApiResponseStatus.Success -> binding.progress.isVisible = false
             }
         }
     }

@@ -13,10 +13,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyDogCollection">
         <activity
-            android:name=".ui.view.DogDetailActivity"
+            android:name=".ui.view.activities.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.view.DogListActivity"
+            android:name=".ui.view.activities.DogDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.view.activities.DogListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.view.activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,9 +30,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.view.MainActivity"
-            android:exported="true"></activity>
     </application>
 
 </manifest>

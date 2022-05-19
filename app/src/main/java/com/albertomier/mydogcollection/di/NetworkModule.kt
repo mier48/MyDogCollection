@@ -1,7 +1,7 @@
 package com.albertomier.mydogcollection.di
 
 import com.albertomier.mydogcollection.core.BASE_URL
-import com.albertomier.mydogcollection.data.network.DogApiClient
+import com.albertomier.mydogcollection.data.network.ApiClient
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,7 +25,7 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideDogApiClient(retrofit: Retrofit): DogApiClient {
-        return retrofit.create(DogApiClient::class.java)
+    fun provideDogApiClient(retrofit: Retrofit): ApiClient {
+        return retrofit.create(ApiClient::class.java)
     }
 }

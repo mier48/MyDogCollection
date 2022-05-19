@@ -7,7 +7,7 @@ import kotlinx.coroutines.withContext
 import retrofit2.Response
 import javax.inject.Inject
 
-class DogService @Inject constructor(private val api: DogApiClient) {
+class DogService @Inject constructor(private val api: ApiClient) {
 
     suspend fun getAllDogs(): List<DogResponse> {
         return withContext(Dispatchers.IO) {

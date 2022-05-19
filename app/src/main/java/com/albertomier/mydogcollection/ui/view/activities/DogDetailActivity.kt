@@ -1,10 +1,11 @@
-package com.albertomier.mydogcollection.ui.view
+package com.albertomier.mydogcollection.ui.view.activities
 
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import coil.load
 import com.albertomier.mydogcollection.R
+import com.albertomier.mydogcollection.core.DOG_KEY
 import com.albertomier.mydogcollection.databinding.ActivityDogDetailBinding
 import com.albertomier.mydogcollection.domain.model.Dog
 import dagger.hilt.android.AndroidEntryPoint
@@ -13,10 +14,6 @@ import dagger.hilt.android.AndroidEntryPoint
 class DogDetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDogDetailBinding
-
-    companion object {
-        const val DOG_KEY = "dog"
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
